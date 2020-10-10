@@ -20,6 +20,8 @@ function getWeather(city) {
         $("#currentHigh").text(response.main.temp_max + " F");
         $("#currentLow").text(response.main.temp_min + " F");
         // $("#currentIcon").text(response.weather.icon); 
+        // var x = document.getElementById("search-value");
+        // document.getElementById("demo").innerHTML = x;
     })
 
     $.ajax({
