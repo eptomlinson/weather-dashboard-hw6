@@ -5,7 +5,7 @@
 // weather data is displayed 
 var weatherApiKey = "883f353f6e06551f30c9aba3bab1545f";
 function getWeather(city) {
-    console.log(city);
+    // console.log(city); 
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=" + weatherApiKey + "&units=imperial";
     var fiveDayURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city +"&appid=" + weatherApiKey + "&units=imperial";
 
@@ -13,11 +13,12 @@ function getWeather(city) {
     url:queryURL,
     method:"GET"
     }).then(function(response) {
-        console.log(response.main.humidity);
         $("#currentCity").text(response.name); 
         $("#currentTemp").text(response.main.temp + " F");
         $("#currentHumidity").text(response.main.humidity +"%");
         $("#currentWind").text(response.wind.speed + " MPH");
+        $("#currentHigh").text(response.main.temp_max + " F");
+        $("#currentLow").text(response.main.temp_min + " F");
         // $("#currentIcon").text(response.weather.icon); 
     })
 
