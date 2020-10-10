@@ -3,7 +3,7 @@
 // press button (combine function)
 // api calls for weather data 
 // weather data is displayed 
-var apiKey = "8c2e95818c2adf53f3a3c8bd87b93476";
+var apiKey = "883f353f6e06551f30c9aba3bab1545f";
 function getWeather(city) {
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=" + apiKey;
     $.ajax({
