@@ -13,8 +13,12 @@ function getWeather(city) {
     url:queryURL,
     method:"GET"
     }).then(function(response) {
-        console.log(response);
-        $("#currentTemp").text(response.main.temp)
+        console.log(response.main.humidity);
+        $("#currentCity").text(response.name); 
+        $("#currentTemp").text(response.main.temp + " F");
+        $("#currentHumidity").text(response.main.humidity +"%");
+        $("#currentWind").text(response.wind.speed + " MPH");
+        // $("#currentIcon").text(response.weather.icon); 
     })
 
     $.ajax({
@@ -23,15 +27,15 @@ function getWeather(city) {
     }).then(function(fiveDayRes){
         console.log(fiveDayRes);
         for(i=0; i<fiveDayRes.list.length; i+=8){
-            console.log(fiveDayRes.list[i].main.temp)
+            console.log(fiveDayRes.list[i].main.temp);
             //0,8,16,24,32
-            $("#index-"+i).text(fiveDayRes.list[i].main.temp)
+            $(".index-"+i).text(fiveDayRes.list[i].main.temp, fiveDayRes.list[i].main.humidity);
         }
     })
 }
 $("#search-button").on("click", function() {
     var city = $("#search-value").val();
-    console.log(city);
+    // console.log(city); 
     getWeather(city);
     });
     
