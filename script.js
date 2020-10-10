@@ -33,12 +33,5 @@ $("#search-button").on("click", function() {
     var city = $("#search-value").val();
     console.log(city);
     getWeather(city);
-    // var weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=883f353f6e06551f30c9aba3bab1545f&units=imperial`
-    //     $.ajax({
-    //         url: weatherURL,
-    //         method: "GET"
-    //     }).then(function(res){
-    //         console.log(res);
-    //     })
     });
     
